@@ -4,35 +4,42 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: #f9f9f9;
+    background-color: #f0f2f5;
     color: #333;
 }
 
+/* Header Styles */
 header {
-    background-color: #0044cc;
+    background-color: #2c3e50;
     color: white;
-    padding: 15px 0;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -40,12 +47,14 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #18bc9c;
 }
 
+/* Main Styles */
 main {
     flex: 1;
     padding: 20px;
@@ -56,11 +65,12 @@ main {
     justify-content: center;
 }
 
+/* Footer Styles */
 footer {
-    background-color: #0044cc;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 0;
     margin-top: 20px;
 }
 
@@ -77,10 +87,11 @@ footer .footer-links li {
 footer .footer-links li a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 footer .footer-links li a:hover {
-    text-decoration: underline;
+    color: #18bc9c;
 }
 
 /* Banner Styles */
@@ -92,21 +103,9 @@ footer .footer-links li a:hover {
 }
 
 .banner h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.banner .cta-button {
-    background-color: #ff6600;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-.banner .cta-button:hover {
-    background-color: #cc5200;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Featured Listings Styles */
@@ -118,17 +117,21 @@ footer .footer-links li a:hover {
 .featured-listings h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 .property {
     display: inline-block;
-    width: 45%;
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
     margin: 10px 2.5%;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
     text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .property img {
@@ -139,6 +142,7 @@ footer .footer-links li a:hover {
 .property h3 {
     font-size: 24px;
     margin: 10px;
+    color: #2c3e50;
 }
 
 .property p {
@@ -147,16 +151,22 @@ footer .footer-links li a:hover {
 
 .property .cta-button {
     display: block;
-    background-color: #0044cc;
+    background-color: #18bc9c;
     color: white;
     padding: 10px;
     text-align: center;
     text-decoration: none;
     border-radius: 0 0 10px 10px;
+    transition: background-color 0.3s;
 }
 
 .property .cta-button:hover {
-    background-color: #003399;
+    background-color: #16a085;
+}
+
+.property:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Why Choose Us Styles */
@@ -168,6 +178,7 @@ footer .footer-links li a:hover {
 .why-choose-us h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 .why-choose-us ul {
@@ -178,6 +189,7 @@ footer .footer-links li a:hover {
 
 .why-choose-us ul li {
     margin: 10px 0;
+    color: #34495e;
 }
 
 /* Testimonials Styles */
@@ -189,115 +201,124 @@ footer .footer-links li a:hover {
 .testimonials h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #2c3e50;
 }
 
 .testimonials p {
     font-style: italic;
     margin: 10px 0;
-}
-
-/* About Us Styles */
-.about {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.about h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.team-member {
-    display: inline-block;
-    width: 45%;
-    margin: 10px 2.5%;
-    text-align: center;
-}
-
-.team-member img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
-.team-member h3 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.team-member p {
-    font-size: 18px;
-}
-
-/* Contact Styles */
-.contact {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.contact h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.contact form {
-    display: inline-block;
-    text-align: left;
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.contact form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.contact form input, .contact form textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.contact form button {
-    background-color: #0044cc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.contact form button:hover {
-    background-color: #003399;
-}
-
-.contact-info {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.contact-info p {
-    margin: 10px 0;
+    color: #34495e;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
     nav ul li {
         display: block;
         margin: 10px 0;
     }
 
-    .property, .team-member {
+    .property {
         width: 100%;
+        max-width: 600px;
+        max-height: 400px;
         margin: 10px 0;
     }
+
+    .banner h1 {
+        font-size: 28px;
+    }
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    max-width: 100%;
+    height: 100%; /* Example height, adjust as needed */
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    transition: transform 1s ease;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 100%; /* Ensure images fill the slideshow container */
+    object-fit: cover;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.button-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-all-button {
+    background-color: #18bc9c;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-all-button:hover {
+    background-color: #16a085;
+}
+
+
+/* Contact Form Styles */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.contact form label {
+    font-weight: bold;
+}
+
+.contact form input, .contact form textarea, .contact form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.contact form button {
+    background-color: #18bc9c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+    background-color: #16a085;
+}
+
+.contact .contact-info {
+    margin-top: 20px;
 }
