@@ -1,0 +1,89 @@
+/* Center the grid container */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 grid */
+    gap: 20px; /* Spacing between items */
+    padding: 20px;
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0; /* Center the grid container */
+    margin-left: -450px; /* Move the grid to the left */
+    margin-right: 20px; /* Add some space on the right if needed */
+}
+
+/* Ensure each property item looks good in the grid */
+.property {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    border: 2px solid #f0f2f5; /* Light border color */
+    height: 100%; /* Ensures container takes up full height */
+    position: relative; /* Ensure positioning context for the button */
+}
+
+/* Ensure the image covers the box properly */
+.property img {
+    width: 100%;
+    height: 450px; /* Fixed height for images */
+    object-fit: cover; /* Cover ensures the image covers the entire area */
+    display: block; /* Remove default bottom margin/padding */
+}
+
+/* Container for content inside the property box */
+.property-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space evenly */
+    flex: 1; /* Allows the content to expand */
+    padding: 15px; /* Padding inside the property box */
+}
+
+/* Ensure text and buttons are properly styled */
+.property h3 {
+    font-size: 22px; /* Slightly larger font size */
+    margin: 0; /* Remove margin to prevent extra space */
+    color: #2c3e50; /* Dark text color */
+    font-weight: bold; /* Bold text */
+}
+
+.property p {
+    margin: 10px 0; /* Margin above and below paragraphs */
+    color: #34495e; /* Slightly lighter text color */
+}
+
+.property .cta-button {
+    background-color: #18bc9c; /* Primary color */
+    color: white;
+    padding: 12px 20px; /* Increased padding */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0 0 15px 15px; /* Rounded corners at bottom */
+    transition: background-color 0.3s;
+    font-size: 18px; /* Larger font size for the button */
+    margin: 0; /* Ensure no margin to remove extra space */
+    position: absolute; /* Position the button at the bottom */
+    bottom: 0; /* Align button to the bottom */
+    width: calc(100% - 2px); /* Full width minus border */
+}
+
+/* Remove extra space beneath the button */
+.property:hover {
+    transform: translateY(-10px); /* Increased lift effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    border-color: #18bc9c; /* Border color change on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .property-grid {
+        grid-template-columns: 1fr; /* Stack items in one column on small screens */
+    }
+
+    .property img {
+        height: 150px; /* Adjusted image height on small screens */
+    }
+}

@@ -5,8 +5,14 @@ html, body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+    
 }
-
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
 body {
     display: flex;
     flex-direction: column;
@@ -322,3 +328,61 @@ footer .footer-links li a:hover {
 .contact .contact-info {
     margin-top: 20px;
 }
+
+.property-details {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.property-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.property-main-img img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.property-thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.property-thumbnails img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.property-thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+.property-features {
+    flex: 1;
+    font-size: 18px;
+}
+
+.property-features p {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .property-info {
+        flex-direction: column;
+    }
+
+    .property-thumbnails {
+        justify-content: center;
+    }
+}
+
+
